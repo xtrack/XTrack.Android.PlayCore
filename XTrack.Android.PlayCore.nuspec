@@ -16,7 +16,8 @@
 		</dependencies>
 		<tags>xamarin android play core</tags>
 	</metadata>
-	<files>  
+	<files>
+		<file src="License.md" target="" />
 		<file src="XTrack.Android.PlayCore.Binding\bin\Release\XTrack.Android.PlayCore.Binding.dll" target="lib\MonoAndroid10" />
 	</files>  
 </package>
