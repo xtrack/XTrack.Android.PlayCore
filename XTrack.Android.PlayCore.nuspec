@@ -5,13 +5,16 @@
 		<version>1.0.0</version>
 		<authors>XTrack</authors>
 		<owners>XTrack</owners>
+		<projectUrl>https://github.com/xtrack/XTrack.Android.PlayCore</projectUrl>
 		<releaseNotes/>
+		<license type="file">License.md</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Google Play Core library binding</description>
-		<copyright>Copyright 2020</copyright>
+		<copyright>Copyright 2021</copyright>
 		<dependencies>
         <group targetFramework="MonoAndroid1.0"/>
 		</dependencies>
+		<tags>xamarin android play core</tags>
 	</metadata>
 	<files>  
 		<file src="XTrack.Android.PlayCore.Binding\bin\Release\XTrack.Android.PlayCore.Binding.dll" target="lib\MonoAndroid10" />
