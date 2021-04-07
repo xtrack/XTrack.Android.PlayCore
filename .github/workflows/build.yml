@@ -30,7 +30,7 @@ jobs:
           nuget-version: '5.x'
         
       - name: Build Solution
-        run: msbuild ./NugetTest/NugetTest.sln /restore /p:Configuration=Release
+        run: msbuild ./XTrack.Android.PlayCore.sln /restore /p:Configuration=Release
         
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
