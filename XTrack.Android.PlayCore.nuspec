@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>XTrack.Android.PlayCore</id>
+		<version>1.0.0</version>
+		<authors>XTrack</authors>
+		<owners>XTrack</owners>
+		<releaseNotes/>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Google Play Core library binding</description>
+		<copyright>Copyright 2020</copyright>
+		<dependencies>
+        <group targetFramework="MonoAndroid1.0"/>
+		</dependencies>
+	</metadata>
+	<files>  
+		<file src="XTrack.Android.PlayCore.Binding\bin\Release\XTrack.Android.PlayCore.Binding.dll" target="lib\MonoAndroid10" />
+	</files>  
+</package>

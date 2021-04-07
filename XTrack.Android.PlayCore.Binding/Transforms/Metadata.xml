@@ -1,0 +1,6 @@
+﻿<metadata>
+  <!--<attr path="/api/package[@name='com.google.android.play.core.tasks']/class[@name='NativeOnCompleteListener']/method[@name='onComplete' and count(parameter)=1 and parameter[1][@type='com.google.android.play.core.tasks.Task&lt;java.lang.Object&gt;']]" />-->
+  <attr path="/api/package[@name='com.google.android.play.core.tasks']/interface[@name='OnCompleteListener']/method[@name='onComplete' and count(parameter)=1 and parameter[1][@type='com.google.android.play.core.tasks.Task&lt;ResultT&gt;']]/parameter[1]" name="type" >Com.Google.Android.Play.Core.Tasks.Task</attr>
+  <attr path="/api/package[@name='com.google.android.play.core.assetpacks']/class[@name='NativeAssetPackStateUpdateListener']/method[@name='onStateUpdate']/parameter[1]" name="managedType">Java.Lang.Object</attr>
+  <!--<remove-node path="/api/package[@name='com.bumptech.glide.load.resource.bitmap']/interface[@name='BitmapDecoder']/method[@name='decode']" />-->
+</metadata>
