@@ -1,5 +1,7 @@
 # XTrack.Android.PlayCore
 
+[![NuGet version (XTrack.Android.PlayCore)](https://img.shields.io/nuget/v/XTrack.Android.PlayCore.svg?style=flat-square)](https://www.nuget.org/packages/XTrack.Android.PlayCore/)
+
 ## Description
 
 Google Play Core library binding for Xamarin.Android projects.
