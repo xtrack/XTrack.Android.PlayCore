@@ -9,13 +9,17 @@ using Com.Google.Android.Play.Core.Tasks;
 using Java.Lang;
 using System;
 using Android.Content;
+using Com.Google.Android.Play.Core.Review;
+using Com.Google.Android.Play.Core.Review.Testing;
 
 namespace Sample
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, IOnSuccessListener
+    public class MainActivity : AppCompatActivity, IOnSuccessListener, IOnCompleteListener
     {
         private IAppUpdateManager _appUpdateManager;
+        private IReviewManager _reviewManager;
+        private ReviewInfo _reviewInfo;
         private const int UpdateRequestCode = 123;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -25,9 +29,25 @@ namespace Sample
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            var buttonTest = FindViewById<Button>(Resource.Id.buttonUpdate);
-            buttonTest.Click += OnCheckUpdateClick;
+            var buttonUpdate = FindViewById<Button>(Resource.Id.buttonUpdate);
+            buttonUpdate.Click += OnCheckUpdateClick;
+
+            var buttonReview = FindViewById<Button>(Resource.Id.buttonReview);
+            buttonReview.Click += OnReviewClick;
+
             _appUpdateManager = AppUpdateManagerFactory.Create(this);
+
+            _reviewManager = ReviewManagerFactory.Create(this);
+            //_reviewManager = new FakeReviewManager(this);
+            var request = _reviewManager.RequestReviewFlow().AddOnCompleteListener(this);
+        }
+
+        private void OnReviewClick(object sender, EventArgs e)
+        {
+            if (_reviewInfo != null)
+            {
+                _ = _reviewManager.LaunchReviewFlow(this, _reviewInfo);
+            }
         }
 
         private void OnCheckUpdateClick(object sender, EventArgs e)
@@ -79,6 +99,14 @@ namespace Sample
                     // If the update is cancelled or fails,
                     // you can request to start the update again.
                 }
+            }
+        }
+
+        public void OnComplete(Task task)
+        {
+            if(task.IsSuccessful)
+            {
+                _reviewInfo = (ReviewInfo)task.GetResult(Class.FromType(typeof(ReviewInfo)));
             }
         }
     }
